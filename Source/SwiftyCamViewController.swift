@@ -882,7 +882,9 @@ open class SwiftyCamViewController: UIViewController {
 		DispatchQueue.main.async(execute: { [unowned self] in
 			let message = SwiftyCamViewController.localizedString("Cihaz ayarlarından kameraya erişim izninin verilmesi gerekiyor.")!			   
 			let alertController = UIAlertController(title: SwiftyCamViewController.localizedString("Kameraya Erişim")!, message: message, preferredStyle: .alert)
-			alertController.addAction(UIAlertAction(title: SwiftyCamViewController.localizedString("Tamam")!, style: .cancel, handler: nil))
+			alertController.addAction(UIAlertAction(title: SwiftyCamViewController.localizedString("Tamam")!, style: .cancel, handler: { action in
+                		self.dismiss(animated: true, completion: nil)
+            		}))
 			alertController.addAction(UIAlertAction(title: SwiftyCamViewController.localizedString("Ayarlar")!, style: .default, handler: { action in
 				if #available(iOS 10.0, *) {
 					UIApplication.shared.openURL(URL(string: UIApplication.openSettingsURLString)!)
