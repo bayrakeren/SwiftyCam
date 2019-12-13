@@ -866,7 +866,7 @@ open class SwiftyCamViewController: UIViewController {
 
 	/// Handle Denied App Privacy Settings
 
-	static var language: String? = nil
+	open static var language: String? = nil
 
 	static func localizedString(_ key: String) -> String? {
         if language != nil {
